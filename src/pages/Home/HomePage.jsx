@@ -34,7 +34,7 @@ const HomePage = () => {
                 {popularMovies.map((movie) => {
                     return (
                         <div className="py-2" key={movie?.id}>
-                            <h2>{movie?.title}</h2>
+                            <h2 className="font-bold text-3xl">{movie?.title}</h2>
                             <p>{movie?.overview}</p>
                         </div>
                     );
