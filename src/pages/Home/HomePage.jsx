@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import MovieCard from "../../components/Card/MovieCard";
 
 const HomePage = () => {
     const [popularMovies, setPopularMovies] = useState([]);
@@ -29,15 +30,27 @@ const HomePage = () => {
     // Display
     return (
         <>
-            <div className="">
-                {popularMovies.map((movie) => {
-                    return (
-                        <div className="py-2" key={movie?.id}>
-                            <h2 className="font-bold text-3xl">{movie?.title}</h2>
-                            <p>{movie?.overview}</p>
-                        </div>
-                    );
-                })}
+            <div className="container mx-auto px-4">
+                <div className="grid grid-cols-2 gap-2 lg:grid lg:grid-cols-4 lg:gap-4">
+                    {popularMovies.map((movie) => {
+                        return (
+                            <div key={movie?.id}>
+                                <MovieCard id={movie?.id} title={movie?.original_title} overview={movie?.overview} poster={`https://image.tmdb.org/t/p/w500/${movie?.poster_path}`} />
+                            </div>
+                        );
+                    })}
+                </div>
+
+                <div className="px-4">
+                    {popularMovies.map((movie) => {
+                        return (
+                            <div className="py-2" key={movie?.id}>
+                                <h2 className="font-bold text-3xl">{movie?.title}</h2>
+                                <p>{movie?.overview}</p>
+                            </div>
+                        );
+                    })}
+                </div>
             </div>
         </>
     );
