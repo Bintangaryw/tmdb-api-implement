@@ -4,6 +4,7 @@ import SearchPage from "./pages/Search/SearchPage";
 import SearchPageParams from "./pages/Search/SearchPageParams";
 import MovieDetails from "./pages/Details/MovieDetails";
 import NavbarComponent from "./components/Navbar/NavbarComponent";
+import FooterComponent from "./components/Footer/FooterComponent";
 
 function App() {
     return (
@@ -16,6 +17,7 @@ function App() {
                 <Route path="/details/:movieId" element={<MovieDetails />} />
                 <Route path="*" element={<h1>Not Found!</h1>} />
             </Routes>
+            <FooterComponent />
         </BrowserRouter>
     );
 }
