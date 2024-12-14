@@ -32,7 +32,7 @@ const HomePage = () => {
     return (
         <>
             <div className="container mx-auto px-4">
-                <div>
+                <div className="sm:hidden">
                     <h3 className="text-3xl font-bold py-2 pb-4">Now Playing</h3>
                     <CarouselComp />
                 </div>
