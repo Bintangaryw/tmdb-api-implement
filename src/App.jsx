@@ -1,10 +1,10 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import HomePage from "./pages/Home/HomePage";
-import SearchPage from "./pages/Search/SearchPage";
-import SearchPageParams from "./pages/Search/SearchPageParams";
-import MovieDetails from "./pages/Details/MovieDetails";
-import NavbarComponent from "./components/Navbar/NavbarComponent";
-import FooterComponent from "./components/Footer/FooterComponent";
+import HomePage from "./pages/home/HomePage";
+import SearchPage from "./pages/search/SearchPage";
+import SearchPageParams from "./pages/search/SearchPageParams";
+import MovieDetails from "./pages/details/MovieDetails";
+import NavbarComponent from "./components/navbar/NavbarComponent";
+import FooterComponent from "./components/footer/FooterComponent";
 
 function App() {
     return (
