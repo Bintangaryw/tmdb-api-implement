@@ -5,7 +5,6 @@ import CarouselComp from "../../components/carousel-bleed/CarouselComp";
 
 const HomePage = () => {
     const [popularMovies, setPopularMovies] = useState([]);
-    // const [upcomingMovies, setUpcomingMovies] = useState([]);
 
     // Get popular movies..
     useEffect(() => {
@@ -30,26 +29,6 @@ const HomePage = () => {
         };
         getPopularMovies();
     }, []);
-
-    // Get upcoming movies..
-    // useEffect(() => {
-    //     const getUpcomingMovies = async () => {
-    //         try {
-    //             const response = await axios.get(`${import.meta.env.VITE_API_URL}/3/movie/upcoming`, {
-    //                 headers: {
-    //                     Authorization: `Bearer ${import.meta.env.VITE_API_KEY}`,
-    //                 },
-    //             });
-    //             const f_upcomingMovies = response.data.results;
-    //             setUpcomingMovies(f_upcomingMovies);
-    //             console.log(f_upcomingMovies);
-    //         } catch (error) {
-    //             alert(error);
-    //         }
-    //     };
-
-    //     getUpcomingMovies();
-    // }, []);
 
     // Display
     return (
