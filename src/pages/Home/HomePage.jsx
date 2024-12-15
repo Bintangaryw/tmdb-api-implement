@@ -5,7 +5,9 @@ import CarouselComp from "../../components/carousel-bleed/CarouselComp";
 
 const HomePage = () => {
     const [popularMovies, setPopularMovies] = useState([]);
+    // const [upcomingMovies, setUpcomingMovies] = useState([]);
 
+    // Get popular movies..
     useEffect(() => {
         const getPopularMovies = async () => {
             try {
@@ -14,7 +16,8 @@ const HomePage = () => {
                         Authorization: `Bearer ${import.meta.env.VITE_API_KEY}`,
                     },
                 });
-                const f_popularMovie = response.data.results; //mengambil results dari dalam objek data pada response
+                const f_popularMovie = response.data.results;
+
                 console.log(f_popularMovie);
                 setPopularMovies(f_popularMovie);
             } catch (error) {
@@ -27,6 +30,26 @@ const HomePage = () => {
         };
         getPopularMovies();
     }, []);
+
+    // Get upcoming movies..
+    // useEffect(() => {
+    //     const getUpcomingMovies = async () => {
+    //         try {
+    //             const response = await axios.get(`${import.meta.env.VITE_API_URL}/3/movie/upcoming`, {
+    //                 headers: {
+    //                     Authorization: `Bearer ${import.meta.env.VITE_API_KEY}`,
+    //                 },
+    //             });
+    //             const f_upcomingMovies = response.data.results;
+    //             setUpcomingMovies(f_upcomingMovies);
+    //             console.log(f_upcomingMovies);
+    //         } catch (error) {
+    //             alert(error);
+    //         }
+    //     };
+
+    //     getUpcomingMovies();
+    // }, []);
 
     // Display
     return (
