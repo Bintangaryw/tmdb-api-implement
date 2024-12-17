@@ -1,12 +1,17 @@
+import instagram from "../../assets/img/instagram.png";
+import justwatch from "../../assets/img/justwatch.png";
+import link from "../../assets/img/link.png";
+import twitter from "../../assets/img/twitter.png";
+
 import { useState } from "react";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import CarouselCasts from "../../components/casts-carousel/CarouselCasts";
 
 const MovieDetails = () => {
     const { movieId } = useParams();
     const [movieDetails, setMovieDetails] = useState(null);
-    const [movieCast, setMovieCast] = useState([]);
     const [movieGenre, setMovieGenre] = useState([]);
 
     // get movie details
@@ -37,26 +42,6 @@ const MovieDetails = () => {
         getMovieDetails();
     }, []);
 
-    // get movie casts
-    useEffect(() => {
-        const getMovieCast = async () => {
-            try {
-                const response = await axios.get(`${import.meta.env.VITE_API_URL}/3/movie/${movieId}/credits`, {
-                    headers: {
-                        Authorization: `Bearer ${import.meta.env.VITE_API_KEY}`,
-                    },
-                });
-                const f_movieCast = response.data.cast.filter((person) => person.known_for_department === "Acting");
-                console.log(f_movieCast);
-
-                setMovieCast(f_movieCast);
-            } catch (error) {
-                alert(error);
-            }
-        };
-        getMovieCast();
-    }, []);
-
     return (
         <>
             {/* Movie data */}
@@ -83,9 +68,51 @@ const MovieDetails = () => {
                     </div>
                 </div>
 
-                {/* Cast data */}
+                {/* Caster and Social */}
+                <div className="flex flex-row pt-9">
+                    {/* Casts */}
+                    <div className="basis-3/4">
+                        <div className="">
+                            <CarouselCasts />
+                        </div>
+                    </div>
+                    {/* Socials and data */}
+                    <div className="basis-1/4">
+                        <div className="flex justify-around">
+                            <img src={instagram} className="w-10" />
+                            <img src={twitter} className="w-10" />
+                            <img src={justwatch} className="w-10" />
+                            <img src={link} className="w-10" />
+                        </div>
 
-                <div>Top Billed Cast</div>
+                        <div className="py-4">
+                            <div className="py-2">
+                                <p className="font-bold">Original Name</p>
+                                <p>Original name..</p>
+                            </div>
+                            <div className="py-2">
+                                <p className="font-bold">Status</p>
+                                <p>Original name..</p>
+                            </div>
+                            <div className="py-2">
+                                <p className="font-bold">Network</p>
+                                <p>Network..</p>
+                            </div>
+                            <div className="py-2">
+                                <p className="font-bold">Original Language</p>
+                                <p>Original language</p>
+                            </div>
+                            <div className="py-2">
+                                <p className="font-bold">Type</p>
+                                <p>Type</p>
+                            </div>
+                            <div className="py-2">
+                                <p className="font-bold">Keywords</p>
+                                <p>Keywords</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 {/* Social reviews and discussions */}
                 <div>Social reviews and discussions</div>
