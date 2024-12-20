@@ -26,6 +26,7 @@ const CarouselCasts = () => {
         };
         getMovieCast();
     }, []);
+
     return (
         <>
             <div className="carousel rounded-box">

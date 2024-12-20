@@ -87,24 +87,16 @@ const MovieDetails = () => {
 
                         <div className="py-4">
                             <div className="py-2">
-                                <p className="font-bold">Original Name</p>
-                                <p>Original name..</p>
-                            </div>
-                            <div className="py-2">
                                 <p className="font-bold">Status</p>
-                                <p>Original name..</p>
-                            </div>
-                            <div className="py-2">
-                                <p className="font-bold">Network</p>
-                                <p>Network..</p>
+                                <p>{movieDetails?.status}</p>
                             </div>
                             <div className="py-2">
                                 <p className="font-bold">Original Language</p>
-                                <p>Original language</p>
+                                <p>{movieDetails?.original_language}</p>
                             </div>
                             <div className="py-2">
-                                <p className="font-bold">Type</p>
-                                <p>Type</p>
+                                <p className="font-bold">Budget</p>
+                                <p>{movieDetails?.budget}</p>
                             </div>
                             <div className="py-2">
                                 <p className="font-bold">Keywords</p>
