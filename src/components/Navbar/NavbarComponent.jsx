@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const NavbarComponent = () => {
     return (
         <div className="pb-12">
@@ -17,25 +19,37 @@ const NavbarComponent = () => {
                                 <a>Search by</a>
                                 <ul className="p-2">
                                     <li>
-                                        <a>Collection</a>
+                                        <Link to={"/"}>
+                                            <a>Collection</a>
+                                        </Link>
                                     </li>
                                     <li>
-                                        <a>Company</a>
+                                        <Link to={"/"}>
+                                            <a>Company</a>
+                                        </Link>
                                     </li>
                                     <li>
-                                        <a>Keyword</a>
+                                        <Link to={"/"}>
+                                            <a>Keyword</a>
+                                        </Link>
                                     </li>
                                     <li>
-                                        <a>Movie</a>
+                                        <Link to={"/search/movies"}>Movie</Link>
                                     </li>
                                     <li>
-                                        <a>Multi</a>
+                                        <Link to={"/"}>
+                                            <a>Multi</a>
+                                        </Link>
                                     </li>
                                     <li>
-                                        <a>Person</a>
+                                        <Link to={"/"}>
+                                            <a>Person</a>
+                                        </Link>
                                     </li>
                                     <li>
-                                        <a>TV</a>
+                                        <Link to={"/"}>
+                                            <a>TV</a>
+                                        </Link>
                                     </li>
                                 </ul>
                             </li>
@@ -56,25 +70,37 @@ const NavbarComponent = () => {
                                 <summary>Search by</summary>
                                 <ul className="p-2">
                                     <li>
-                                        <a>Collection</a>
+                                        <Link to={"/"}>
+                                            <a>Collection</a>
+                                        </Link>
                                     </li>
                                     <li>
-                                        <a>Company</a>
+                                        <Link to={"/"}>
+                                            <a>Company</a>
+                                        </Link>
                                     </li>
                                     <li>
-                                        <a>Keyword</a>
+                                        <Link to={"/"}>
+                                            <a>Keyword</a>
+                                        </Link>
                                     </li>
                                     <li>
-                                        <a>Movie</a>
+                                        <Link to={"/search/movies"}>Movie</Link>
                                     </li>
                                     <li>
-                                        <a>Multi</a>
+                                        <Link to={"/"}>
+                                            <a>Multi</a>
+                                        </Link>
                                     </li>
                                     <li>
-                                        <a>Person</a>
+                                        <Link to={"/"}>
+                                            <a>Person</a>
+                                        </Link>
                                     </li>
                                     <li>
-                                        <a>TV</a>
+                                        <Link to={"/"}>
+                                            <a>TV</a>
+                                        </Link>
                                     </li>
                                 </ul>
                             </details>
