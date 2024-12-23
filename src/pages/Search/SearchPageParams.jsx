@@ -7,17 +7,15 @@ const SearchPageParams = () => {
     const [searchedMovies, setSearchedMovies] = useState([]);
     const [genreOptions, setgenreOptions] = useState([]);
 
-    // Get params
     useEffect(() => {
         const getSearchedMovies = async () => {
             try {
-                const query = searchParams.get("query");
+                // Get params query and genre
                 const withGenres = searchParams.get("with_genres");
-                // const page = searchParams.get("page");
 
+                // Get the searched movie
                 const response = await axios.get(`${import.meta.env.VITE_API_URL}/3/discover/movie`, {
                     params: {
-                        query: query,
                         page: 1,
                         with_genres: withGenres,
                     },
@@ -27,8 +25,8 @@ const SearchPageParams = () => {
                 });
                 const fetchedMovies = response.data.results;
                 setSearchedMovies(fetchedMovies);
-                console.log(fetchedMovies);
-                console.log(query);
+                console.log("Search data:", withGenres);
+                console.log("Results:", fetchedMovies);
             } catch (error) {
                 console.error(error);
             }
@@ -64,13 +62,31 @@ const SearchPageParams = () => {
                         {/* Search form */}
                         <div className="lg:basis-1/4">
                             <div className="flex flex-col">
-                                {/* Title */}
+                                {/* Sort by */}
                                 <div>
                                     <label className="form-control w-full max-w-xs pb-4">
                                         <div className="label">
-                                            <span className="label-text font-bold text-xl">Title</span>
+                                            <span className="label-text font-bold text-xl">Sort by</span>
                                         </div>
-                                        <input type="text" className="input input-bordered w-full max-w-xs" />
+                                        <select className="select select-ghost w-full max-w-xs">
+                                            {/* Ascending sort */}
+                                            <option disabled selected>
+                                                Ascending
+                                            </option>
+                                            <option>Original Title</option>
+                                            <option>Popularity</option>
+                                            <option>Vote Average</option>
+                                            <option>Primary Release Date</option>
+
+                                            {/* Descending sort */}
+                                            <option disabled selected>
+                                                Descending
+                                            </option>
+                                            <option>Original Title</option>
+                                            <option>Popularity</option>
+                                            <option>Vote Average</option>
+                                            <option>Primary Release Date</option>
+                                        </select>
                                     </label>
                                 </div>
 
@@ -80,14 +96,13 @@ const SearchPageParams = () => {
                                         <div className="label">
                                             <span className="label-text font-bold text-xl">Genre</span>
                                         </div>
-
                                         <div className="flex flex-col">
                                             {genreOptions.map((g) => {
                                                 return (
                                                     <div key={g.id}>
                                                         <label className="cursor-pointer label">
                                                             <span className="label-text">{g.name}</span>
-                                                            <input type="checkbox" className="checkbox checkbox-accent" value={g.name} />
+                                                            <input type="checkbox" className="checkbox checkbox-accent" value={g.id} />
                                                         </label>
                                                     </div>
                                                 );
@@ -97,7 +112,7 @@ const SearchPageParams = () => {
                                 </div>
 
                                 {/* Button */}
-                                <div>
+                                <div className="pb-10">
                                     <button className="btn">Search</button>
                                 </div>
                             </div>
@@ -105,7 +120,19 @@ const SearchPageParams = () => {
 
                         {/* Search result */}
                         <div className="lg:basis-3/4">
-                            <div></div>
+                            <div className="lg:grid lg:grid-cols-4 grid grid-cols-2">
+                                <div className="mx-auto">
+                                    <div className="card bg-base-100 w-40 lg:w-72 shadow-xl">
+                                        <figure>
+                                            <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" alt="Shoes" />
+                                        </figure>
+                                        <div className="card-body">
+                                            <h2 className="card-title text-sm lg:text-lg">Shoes!</h2>
+                                            <p className="text-sm lg:text-lg">If a dog chews shoes whose shoes does he choose?</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
