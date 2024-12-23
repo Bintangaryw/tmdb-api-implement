@@ -16,7 +16,7 @@ function App() {
                 <Route path="/" element={<HomePage />} />
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="/register" element={<RegisterPage />} />
-                <Route path="/search/movies" element={<SearchPage />} />
+                <Route path="/search/movies" element={<SearchPageParams />} />
                 <Route path="/searchParams" element={<SearchPageParams />} />
                 <Route path="/details/:movieId" element={<MovieDetails />} />
                 <Route path="*" element={<h1>Not Found!</h1>} />

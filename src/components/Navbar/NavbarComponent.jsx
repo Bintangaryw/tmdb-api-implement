@@ -20,17 +20,17 @@ const NavbarComponent = () => {
                                 <ul className="p-2">
                                     <li>
                                         <Link to={"/"}>
-                                            <a>Collection</a>
+                                            <p>Collection</p>
                                         </Link>
                                     </li>
                                     <li>
                                         <Link to={"/"}>
-                                            <a>Company</a>
+                                            <p>Company</p>
                                         </Link>
                                     </li>
                                     <li>
                                         <Link to={"/"}>
-                                            <a>Keyword</a>
+                                            <p>Keyword</p>
                                         </Link>
                                     </li>
                                     <li>
@@ -38,17 +38,17 @@ const NavbarComponent = () => {
                                     </li>
                                     <li>
                                         <Link to={"/"}>
-                                            <a>Multi</a>
+                                            <p>Multi</p>
                                         </Link>
                                     </li>
                                     <li>
                                         <Link to={"/"}>
-                                            <a>Person</a>
+                                            <p>Person</p>
                                         </Link>
                                     </li>
                                     <li>
                                         <Link to={"/"}>
-                                            <a>TV</a>
+                                            <p>TV</p>
                                         </Link>
                                     </li>
                                 </ul>
@@ -71,17 +71,17 @@ const NavbarComponent = () => {
                                 <ul className="p-2">
                                     <li>
                                         <Link to={"/"}>
-                                            <a>Collection</a>
+                                            <p>Collection</p>
                                         </Link>
                                     </li>
                                     <li>
                                         <Link to={"/"}>
-                                            <a>Company</a>
+                                            <p>Company</p>
                                         </Link>
                                     </li>
                                     <li>
                                         <Link to={"/"}>
-                                            <a>Keyword</a>
+                                            <p>Keyword</p>
                                         </Link>
                                     </li>
                                     <li>
@@ -89,17 +89,17 @@ const NavbarComponent = () => {
                                     </li>
                                     <li>
                                         <Link to={"/"}>
-                                            <a>Multi</a>
+                                            <p>Multi</p>
                                         </Link>
                                     </li>
                                     <li>
                                         <Link to={"/"}>
-                                            <a>Person</a>
+                                            <p>Person</p>
                                         </Link>
                                     </li>
                                     <li>
                                         <Link to={"/"}>
-                                            <a>TV</a>
+                                            <p>TV</p>
                                         </Link>
                                     </li>
                                 </ul>
