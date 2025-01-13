@@ -3,6 +3,7 @@ import google from "../../assets/img/google.png";
 import twitter from "../../assets/img/twitter-square.png";
 import axios from "axios";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 const LoginPage = () => {
@@ -35,9 +36,11 @@ const LoginPage = () => {
                             <p className="text-xl py-2">Sign in to your account</p>
                             <p>
                                 Or
-                                <a href="" className="underline ">
-                                    create your account
-                                </a>
+                                <Link to="/register">
+                                    <a href="" className="underline ">
+                                        create your account
+                                    </a>
+                                </Link>
                             </p>
                         </div>
                     </div>
