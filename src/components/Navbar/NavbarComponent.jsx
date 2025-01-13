@@ -1,6 +1,32 @@
 import { Link } from "react-router-dom";
+import axios from "axios";
+import { useState, useEffect } from "react";
 
 const NavbarComponent = () => {
+    const [profile, setProfile] = useState([]);
+    const token = localStorage.getItem("token");
+
+    // get login user data
+    useEffect(() => {
+        if (!token) return;
+        const getProfile = async () => {
+            const response = await axios.get("https://shy-cloud-3319.fly.dev/api/v1/auth/me", {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            });
+            setProfile(response.data?.data);
+            console.log("Profile: ", profile);
+        };
+        getProfile();
+    }, []);
+
+    // logout
+    const logout = () => {
+        localStorage.removeItem("token");
+        window.location.replace("/login");
+    };
+
     return (
         <div className="pb-12">
             <div className="navbar bg-base-100">
@@ -111,11 +137,26 @@ const NavbarComponent = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <div role="button" className="btn btn-ghost btn-circle avatar">
-                        <div className="w-10 rounded-full">
-                            <img alt="Tailwind CSS Navbar component" src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
-                        </div>
-                    </div>
+                    {token ? (
+                        <details className="dropdown">
+                            <summary className="appearance-none cursor-pointer list-none">
+                                <img alt="Tailwind CSS Navbar component" src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" className="w-10 rounded-full" />
+                            </summary>
+
+                            <ul className="menu dropdown-content bg-base-100 rounded-box z-[1] w-52 p-2 shadow right-0 left-auto">
+                                <li>
+                                    <a>{profile.name}</a>
+                                </li>
+                                <li>
+                                    <a onClick={logout}>Logout</a>
+                                </li>
+                            </ul>
+                        </details>
+                    ) : (
+                        <Link to="/login">
+                            <button className="btn btn-primary">Login</button>
+                        </Link>
+                    )}
                 </div>
             </div>
         </div>

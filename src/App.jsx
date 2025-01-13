@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/home/HomePage";
-import SearchPage from "./pages/search/SearchPage";
+// import SearchPage from "./pages/search/SearchPage";
 import SearchPageParams from "./pages/search/SearchPageParams";
 import MovieDetails from "./pages/details/MovieDetails";
 import NavbarComponent from "./components/navbar/NavbarComponent";
